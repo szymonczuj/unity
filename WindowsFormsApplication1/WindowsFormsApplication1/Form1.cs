@@ -28,7 +28,12 @@ namespace WindowsFormsApplication1
 
         private void button16_Click(object sender, EventArgs e) //=
         {
-            liczba2 = double.Parse(textBox1.Text);
+            if (Double.TryParse(textBox1.Text, out res))
+            {
+                liczba2 = double.Parse(textBox1.Text);
+            }
+            else
+                liczba2 = 0;
             textBox1.Text = "";
             switch (operacja)
             {
