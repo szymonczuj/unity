@@ -12,10 +12,11 @@ namespace WindowsFormsApplication1
 {
     public partial class Form1 : Form
     {
-        char operacja;
-        double liczba1;
-        double liczba2;
-        double wynik;
+        char operacja = '+';
+        double liczba1 = 0;
+        double liczba2 = 0;
+        double wynik = 0;
+        double res;
         public Form1()
         {
             InitializeComponent();
@@ -65,7 +66,12 @@ namespace WindowsFormsApplication1
 
         private void button12_Click(object sender, EventArgs e)
         {
-            liczba1 = double.Parse(textBox1.Text);
+            if (Double.TryParse(textBox1.Text, out res))
+            {
+                liczba1 = double.Parse(textBox1.Text);
+            }
+            else
+                liczba1 = 0;
             textBox1.Text = "";
             operacja = '+';
         }
@@ -117,21 +123,36 @@ namespace WindowsFormsApplication1
 
         private void button13_Click(object sender, EventArgs e)
         {
-            liczba1 = double.Parse(textBox1.Text);
+            if (Double.TryParse(textBox1.Text, out res))
+            {
+                liczba1 = double.Parse(textBox1.Text);
+            }
+            else
+                liczba1 = 0;
             textBox1.Text = "";
             operacja = '-';
         }
 
         private void button14_Click(object sender, EventArgs e)
         {
-            liczba1 = double.Parse(textBox1.Text);
+            if (Double.TryParse(textBox1.Text, out res))
+            {
+                liczba1 = double.Parse(textBox1.Text);
+            }
+            else
+                liczba1 = 0;
             textBox1.Text = "";
             operacja = '*';
         }
 
         private void button15_Click(object sender, EventArgs e)
         {
-            liczba1 = double.Parse(textBox1.Text);
+            if(Double.TryParse(textBox1.Text, out res))
+            {
+                liczba1 = double.Parse(textBox1.Text);
+            }
+                else 
+                liczba1 = 0;
             textBox1.Text = "";
             operacja = '/';
         }
